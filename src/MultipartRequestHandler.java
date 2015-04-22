@@ -35,7 +35,7 @@ public class MultipartRequestHandler {
         for(Part part:parts){
 
             // 3.1 if part is multiparts "file"
-            if(part.getContentType() != null){
+            if(part.getContentType() != null && part.getContentType().contains("image") == true){
 
                 // 3.2 Create a new FileMeta object
                 temp = new FileMeta();
@@ -48,6 +48,8 @@ public class MultipartRequestHandler {
                 // 3.3 Add created FileMeta object to List<FileMeta> files
                 files.add(temp);
 
+            }else{
+                //return null;
             }
         }
         return files;
@@ -89,34 +91,47 @@ public class MultipartRequestHandler {
 
                     } else {
 
-                        File file =null;
-                        // Get the uploaded file parameters
-                        String fileName = item.getName();
-                        // Write the file
-                        if( fileName.lastIndexOf("\\") >= 0 ){
-                            file = new File( filePath +
-                                    fileName.substring( fileName.lastIndexOf("\\"))) ;
-                        }else{
-                            file = new File( filePath +
-                                    fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+                        if(item.getContentType().contains("image") == false){
+                            // 2.7 Create FileMeta object
+                            temp = new FileMeta();
+                            temp.setFileName(item.getName());
+                            temp.setFileAddress(filePath +
+                                    "badfile.jpeg");
+                            temp.setFileType(item.getContentType());
+                            temp.setFileSize(item.getSize()/1024+ "Kb");
+
+                            // 2.7 Add created FileMeta object to List<FileMeta> files
+                            files.add(temp);
+
+                        }else {
+                            File file;
+                            // Get the uploaded file parameters
+                            String fileName = item.getName();
+                            // Write the file
+                            if (fileName.lastIndexOf("\\") >= 0) {
+                                file = new File(filePath +
+                                        fileName.substring(fileName.lastIndexOf("\\")));
+                            } else {
+                                file = new File(filePath +
+                                        fileName.substring(fileName.lastIndexOf("\\") + 1));
+                            }
+                            try {
+                                item.write(file);
+                            } catch (Exception e) {
+
+                            }
+                            System.out.println("Uploaded Filename: " + fileName + "<br>");
+
+                            // 2.7 Create FileMeta object
+                            temp = new FileMeta();
+                            temp.setFileName(item.getName());
+                            temp.setFileAddress(file.getPath());
+                            temp.setFileType(item.getContentType());
+                            temp.setFileSize(item.getSize() / 1024 + "Kb");
+
+                            // 2.7 Add created FileMeta object to List<FileMeta> files
+                            files.add(temp);
                         }
-                        try {
-                            item.write(file);
-                        }catch (Exception e){
-
-                        }
-                        System.out.println("Uploaded Filename: " + fileName + "<br>");
-
-                        // 2.7 Create FileMeta object
-                        temp = new FileMeta();
-                        temp.setFileName(item.getName());
-                        temp.setFileAddress(file.getPath());
-                        temp.setFileType(item.getContentType());
-                        temp.setFileSize(item.getSize()/1024+ "Kb");
-
-                        // 2.7 Add created FileMeta object to List<FileMeta> files
-                        files.add(temp);
-
                     }
                 }
 

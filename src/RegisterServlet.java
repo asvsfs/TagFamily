@@ -1,13 +1,11 @@
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Created by asvsfs on 4/21/2015.
@@ -16,8 +14,18 @@ import java.sql.Statement;
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String pass = request.getParameter("username");
-        String userid = request.getParameter("password");
+        try {
+            // The newInstance() call is a work around for some
+            // broken Java implementations
+
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception ex) {
+            // handle the error
+            ex.printStackTrace();
+        }
+
+        String pass = request.getParameter("uname");
+        String userid = request.getParameter("pass");
         String adminPass = request.getParameter("adminpassword");//bijupsingapore123
 
         if(BCrypt.checkpw(adminPass,"$2a$10$aitLwA6yZTsClT7GGU058O9UdEWaXIH8NzAfkw1xuzNi7Mi7Fhfu.")){
@@ -25,18 +33,23 @@ public class RegisterServlet extends HttpServlet {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
                     "test", "test123");
-            Statement st = con.createStatement();
-            ResultSet rs;
 
             pass = BCrypt.hashpw(pass,BCrypt.gensalt());
-            String insertTableSQL = "INSERT INTO users"
-                    + "( username, password) " + "VALUES"
-                    + "("+userid+","+pass+")";
 
-            rs = st.executeQuery(insertTableSQL);
+            String queryString = "INSERT INTO users (username,password)  " +
+                    "VALUES (?,?)";
 
+            PreparedStatement ps = con.prepareStatement(queryString);
+            ps.setString(1, userid);
+            ps.setString(2, pass);
+
+            ps.execute();
+            response.setStatus(200);
+            response.sendRedirect("Congratulation you made it!");
         }catch(Exception e){
-
+            e.printStackTrace();
+            response.setStatus(500);
+            response.sendRedirect("Contact Administrator");
         }
         }else{
             response.sendRedirect("Not Authorized");

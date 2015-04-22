@@ -22,6 +22,10 @@ public class Filter implements javax.servlet.Filter {
         HttpServletResponse response = (HttpServletResponse) res;
 
         String token = req.getParameter("access_token");
+        if(token == "" || token == null){
+            token = ((HttpServletRequest) req).getSession().getAttribute("access_token").toString();
+        }
+
         if (token == "" || token == null) {
             authentication = false;
         } else {
@@ -38,10 +42,9 @@ public class Filter implements javax.servlet.Filter {
             }
         }
         if (!authentication) {
-           // halt(401, "You are not welcome here");
+            response.setStatus(401);
+            response.sendRedirect("Unauthorized access!");
         }
-
-
     }
 
     public void init(FilterConfig config) throws ServletException {

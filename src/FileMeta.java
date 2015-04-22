@@ -16,6 +16,7 @@ public class FileMeta {
     private String twitter;
     private String fileAddress;
 
+    public boolean isBad=false;
     private InputStream content;
 
 
