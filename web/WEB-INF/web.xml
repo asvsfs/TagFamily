@@ -29,6 +29,22 @@
         <url-pattern>/upload</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>upload</servlet-name>
+        <url-pattern>/fetchimage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tagimage</servlet-name>
+        <servlet-class>TagServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>tagimage</servlet-name>
+        <url-pattern>/tagimage</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>DatabaseAccess</servlet-name>
         <servlet-class>DatabaseAccess</servlet-class>
@@ -53,7 +69,7 @@
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>
         <param-value>
-            e:\uploaddev\
+            e:/uploaddev/
         </param-value>
     </context-param>
 

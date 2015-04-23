@@ -28,7 +28,6 @@
     </table>
     <table name="tags" schema="" catalog="test" type="TABLE">
       <column name="tagid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="userid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="imageid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="x" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="y" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -41,7 +40,6 @@
       <index name="tagid_UNIQUE" unique="true" columns="tagid"/>
       <index name="imageid_idx" unique="false" columns="imageid"/>
       <index name="tagimageid_idx" unique="false" columns="tagimageid"/>
-      <index name="userid_idx" unique="false" columns="userid"/>
     </table>
     <table name="users" schema="" catalog="test" type="TABLE">
       <column name="userid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

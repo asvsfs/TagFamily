@@ -58,6 +58,7 @@ public class MultipartRequestHandler {
     public static List<FileMeta> uploadByApacheFileUpload(HttpServletRequest request ) throws IOException, ServletException{
         String filePath =
                 request.getServletContext().getInitParameter("file-upload");
+
         List<FileMeta> files = new LinkedList<FileMeta>();
 
         // 1. Check request has multipart content

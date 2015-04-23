@@ -9,10 +9,8 @@ import java.io.*;
  * Created by asvsfs on 4/21/2015.
  */
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -77,7 +75,7 @@ public class FileUploadServlet extends HttpServlet {
             for(FileMeta met: resFiles){
                 if(met.isBad == false) {
                     ps.setString(1, met.getFileAddress());
-                    ps.setString(2, userid );
+                    ps.setInt(2, Integer.parseInt(userid));
                     ps.addBatch();
                 }
             }
@@ -85,7 +83,7 @@ public class FileUploadServlet extends HttpServlet {
             ps.close();
             connection.close();
         }catch (Exception e){
-
+            e.printStackTrace();
         }
 
         // Remove some files Do you need this?
@@ -101,7 +99,7 @@ public class FileUploadServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
 
         // 4. Send resutl to client
-        mapper.writeValue(response.getOutputStream(), files);
+        mapper.writeValue(response.getOutputStream(), resFiles);
 
     }
     /***************************************************
@@ -111,24 +109,26 @@ public class FileUploadServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
 
+        try {
+            // The newInstance() call is a work around for some
+            // broken Java implementations
+
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception ex) {
+            // handle the error
+            ex.printStackTrace();
+        }
+
         String filePath =
                 request.getServletContext().getInitParameter("file-upload");
 
-        // 1. Get f from URL upload?f="?"
+        // 1. Get f from URL fetchimage?f="?"
         String value = request.getParameter("f");
 
-        // 2. Get the file of index "f" from the list "files"
-        FileMeta getFile = files.get(Integer.parseInt(value));
-
         try {
-            // 3. Set the response content type = file content type
-            response.setContentType(getFile.getFileType());
-
-            // 4. Set header Content-disposition
-            response.setHeader("Content-disposition", "attachment; filename=\""+getFile.getFileName()+"\"");
-
             // 5. Copy file inputstream to response outputstream
-            InputStream input = new FileInputStream(new File(getFile.getFileAddress()));
+            File ff = new File(value);
+            InputStream input = new FileInputStream(ff);
             OutputStream output = response.getOutputStream();
             byte[] buffer = new byte[1024*10];
 
@@ -136,10 +136,10 @@ public class FileUploadServlet extends HttpServlet {
                 output.write(buffer, 0, length);
             }
 
-            System.out.print("FILE NAME IS :" + getFile.getFileName());
             output.close();
             input.close();
-        }catch (IOException e) {
+
+        }catch(Exception e){
             e.printStackTrace();
         }
 

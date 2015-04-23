@@ -39,17 +39,18 @@ public class LoginServlet extends HttpServlet {
             Statement st = con.createStatement();
             ResultSet rs;
 
-            rs = st.executeQuery("select password from users where username='" + userid + "'");
+            rs = st.executeQuery("select * from users where username='" + userid + "'");
 
             if (rs.next()) {
                 String hashedPassFromDB = rs.getString("password");
+                int userID = rs.getInt("userid");
                 if (BCrypt.checkpw(pass, hashedPassFromDB)) {
                     //successful login
                     String token = JWT.makeJWT(userid, new Date().toString());
                     request.setAttribute("access_token",token);
-                    request.setAttribute("userid", userid);
+                    request.setAttribute("userid", userID);
                     request.getSession().setAttribute("access_token", token);
-                    request.getSession().setAttribute("userid",userid);
+                    request.getSession().setAttribute("userid",userID);
                     response.sendRedirect("/uploadImage.jsp");
                     RequestDispatcher rd =
                         request.getRequestDispatcher("/uploadImage.jsp");

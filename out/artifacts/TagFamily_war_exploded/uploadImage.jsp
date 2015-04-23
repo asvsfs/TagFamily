@@ -1,3 +1,9 @@
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: asvsfs
@@ -10,13 +16,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>jQuery File Upload Example</title>
+  <title> File Upload </title>
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
   <script src="${pageContext.request.contextPath}/js/vendor/jquery-ui.min.js"></script>
   <script src="${pageContext.request.contextPath}/js/jquery.iframe-transport.js"></script>
-  <script src="${pageContext.request.contextPath}/js/jquery.fileupload.js"></script>
-
+  <script src="${pageContext.request.contextPath}/js/jquery.fileupload.js"></script
   <!-- bootstrap just to have good looking page -->
   <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
   <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
@@ -32,23 +37,8 @@
 </head>
 
 <body>
-<div id="site-title-content">
-  <h3 class="site-header"><a rel="home" title="HMKCode" href="http://hmkcode.com/">
-    HMKCode</a>
-  </h3>
-  <h4 class="site-description">
-    Code First!
-  </h4>
-</div>
-<div id="header">
-</div>
-<div class="social-button icon">
-  <a href="http://www.twitter.com/hmkcode" target="_blank" title="Visit Us On Twitter"><img src="img/twitter.png" style="border:0px;" alt="Visit Us On Twitter"></a>
-  <a href="https://www.facebook.com/pages/HMKCode/157443611098005" target="_blank" title="Visit Us On Facebook"><img src="img/facebook.png" style="border:0px;" alt="Visit Us On Facebook"></a>
-  <a href="https://plus.google.com/b/113117706677442855053/113117706677442855053" target="_blank" title="Visit Us On Google Plus"><img src="img/googleplus.png" style="border:0px;" alt="Visit Us On Google Plus"></a>
-</div>
 
-<h1 style="text-align:center">Servlet jQuery File Upload<br></h1>
+<h1 style="text-align:center">File Upload<br></h1>
 
 <!-- user twitter -->
 <div id="user_twitter">
@@ -69,6 +59,7 @@
   </div>
   <h5 style="text-align:center"><i style="color:#ccc"><small>Max File Size: 2 Mb - Display last 20 files</small></i></h5>
 
+
   <table id="uploaded-files" class="table">
     <tr>
       <th>File Name</th>
@@ -77,6 +68,45 @@
       <th>Download</th>
       <th>Uploaded By</th>
     </tr>
+
+    <%
+
+    try{
+      Class.forName("com.mysql.jdbc.Driver").newInstance();
+
+      Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
+              "test", "test123");
+
+        String selectSQL = "select * from images where userid = ?";
+
+      PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
+      preparedStatement.setInt(1, Integer.parseInt(session.getAttribute("userid").toString()));
+
+      ResultSet rs = preparedStatement.executeQuery();
+      int i = 0 ;
+      while (rs.next()) {
+        File file = new File(rs.getString("imagepath"));
+        int id = rs.getInt("imageid");
+    %>
+    <tr id="tt<%=i++%>" >
+      <td><%= file.getName() %></td>
+      <td><%= file.getTotalSpace() %></td>
+      <td><%= file.getName() %></td>
+      <td>
+
+        <a href="/tagimage.jsp?f=<%= file.getPath() %>">
+          <img class='imgholder' src="/fetchimage?f=<%= file.getPath() %>"  />
+        </a>
+      </td>
+
+    </tr>
+    <%
+      }
+        }catch(Exception e){
+            e.printStackTrace();
+      }
+    %>
+
   </table>
 </div>
 </body>
