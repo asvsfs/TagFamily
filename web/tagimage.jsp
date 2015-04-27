@@ -1,3 +1,8 @@
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.io.File" %>
 <%--
   Created by IntelliJ IDEA.
   User: asvsfs
@@ -8,13 +13,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Image Tagging with jQuery and PHP</title>
+  <title>Image Tagging </title>
   <link href="${pageContext.request.contextPath}/css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
   <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css"/>
-  <%--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>--%>
-  <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+  <link href="${pageContext.request.contextPath}/css/jquery.tag.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <%--<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>--%>
   <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
-
+  <%--<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.tag.min.js"></script>--%>
   <style type="text/css" >
 
     body{
@@ -131,6 +137,34 @@
   </style>
   <script>
     $(document).ready(function() {
+      $('#planetmap').on('mouseover','.tagged',function(){
+        if($(this).find(".openDialog").length == 0){
+          $(this).find(".tagged_box").css("display","block");
+          $(this).css("border","3px solid #EEE");
+
+          $(this).find(".tagged_title").css("display","block");
+        }
+      });
+
+      $('#planetmap').on('mouseout','.tagged',function(){
+        if($(this).find(".openDialog").length == 0){
+          $(this).find(".tagged_box").css("display","none");
+          $(this).css("border","none");
+          $(this).find(".tagged_title").css("display","none");
+        }
+      });
+
+      $("#planetmap").on("click",".tagged",function(){
+        $(this).find(".tagged_box").html("<img src='del.png' class='openDialog' value='Delete' onclick='deleteTag(this)' />\n\
+        <img src='save.png' onclick='editTag(this);' value='Save' />");
+
+        var img_scope_top = $("#imageMap").offset().top + $("#imageMap").height() - $(this).find(".tagged_box").height();
+        var img_scope_left = $("#imageMap").offset().left + $("#imageMap").width() - $(this).find(".tagged_box").width();
+
+        $(this).draggable({ containment:[$("#imageMap").offset().left,$("#imageMap").offset().top,img_scope_left,img_scope_top]  });
+
+      });
+
 
       $("#imageMap").click(function(e){
 
@@ -196,41 +230,21 @@
       });
     });
 
-    var mouseovertagged = function(e){
-      if($(e).find(".openDialog").length == 0){
-        $(e).find(".tagged_box").css("display","block");
-        $(e).css("border","3px solid #EEE");
 
-        $(e).find(".tagged_title").css("display","block");
-      }
+
+    var addTagA = function(x,y,width,height,name){
+      var pos_x = x;
+      var pos_y = y;
+      var pos_width = width;
+      var pos_height = height;
+
+      $('#planetmap').append('<div class="tagged" style="width:'+pos_width+';height:'+
+      pos_height+';left:'+pos_x+';top:'+pos_y+';" ><div   class="tagged_box" style="width:'+pos_width+';height:'+
+      pos_height+';display:none;"></div><div class="tagged_title" style="top:'+(pos_height+5)+';display:none;" >'+
+      name+'</div></div>');
+
+
     }
-    $('#planetmap').on('mouseover','.tagged',function(){
-      if($(this).find(".openDialog").length == 0){
-        $(this).find(".tagged_box").css("display","block");
-        $(this).css("border","3px solid #EEE");
-
-        $(this).find(".tagged_title").css("display","block");
-      }
-    });
-
-    $('#planetmap').on('mouseout','.tagged',function(){
-      if($(this).find(".openDialog").length == 0){
-        $(this).find(".tagged_box").css("display","none");
-        $(this).css("border","none");
-        $(this).find(".tagged_title").css("display","none");
-      }
-    });
-
-    $("#planetmap").on("click",".tagged",function(){
-      $(this).find(".tagged_box").html("<img src='del.png' class='openDialog' value='Delete' onclick='deleteTag(this)' />\n\
-        <img src='save.png' onclick='editTag(this);' value='Save' />");
-
-      var img_scope_top = $("#imageMap").offset().top + $("#imageMap").height() - $(this).find(".tagged_box").height();
-      var img_scope_left = $("#imageMap").offset().left + $("#imageMap").width() - $(this).find(".tagged_box").width();
-
-      $(this).draggable({ containment:[$("#imageMap").offset().left,$("#imageMap").offset().top,img_scope_left,img_scope_top]  });
-
-    });
 
     var addTag = function(){
       var position = $('#mapper').position();
@@ -247,10 +261,6 @@
       pos_height+';display:none;"></div><div class="tagged_title" style="top:'+(pos_height+5)+';display:none;" >'+
       $("#title").val()+'</div></div>');
 
-      $('#planetmap').append('<div class="tagged"   style="width:'+pos_width+';height:'+
-      pos_height+';left:'+pos_x+';top:'+pos_y+';" ><div   class="tagged_box" style="width:'+pos_width+';height:'+
-      pos_height+';display:none;" ></div><div class="tagged_title" style="top:'+(pos_height+5)+';display:none;" >'+
-      $("#title").val()+'</div></div>');
 
       $("#mapper").hide();
       $("#form_panel").hide();
@@ -258,16 +268,17 @@
       $.ajax({
         type: "POST",
         url: "/tagimage",
-        data: JSON.stringify({posx:pos_x,
+        data: JSON.stringify({
+          posx:position.left,
           image:$("#imageMap").attr("src"),
-          posy:pos_y,
+          posy:position.top,
           poswidth:pos_width,
           posheight:pos_height,
           name:$("#title").val()}),
         success: function(data){
           console.log(data);
         },
-        contentType: "application/json",
+        contentType: "application/json"
       });
 
 
@@ -275,6 +286,7 @@
 
 
     };
+
     var cancelTag= function(){
       $("#mapper").hide();
       $("#form_panel").hide();
@@ -309,15 +321,29 @@
     }
 
     var deleteTag = function(obj){
+
+
+      $.ajax({
+        type: "POST",
+        url: "/deletetag",
+        data: JSON.stringify({
+          image:$("#imageMap").attr("src"),
+          name:$(obj).parent().parent().val()}),
+        success: function(data){
+          console.log(data);
+        },
+        contentType: "application/json"
+      });
+
       $(obj).parent().parent().remove();
     };
-
-
 
   </script>
 </head>
 <body>
+
 <div id='main_panel'>
+
 
   <div style='margin: auto; width: 600px;'>
 
@@ -355,6 +381,44 @@
     <input type="button" value="Hide Tags" onclick="hideTags()" />
   </div>
 </div>
+
+<script>
+  $("#planetmap").empty();
+  <%
+
+    try{
+      Class.forName("com.mysql.jdbc.Driver").newInstance();
+
+      Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
+              "test", "test123");
+
+      String path = request.getParameter("f");
+
+      String selectSQL = "select * from tags INNER JOIN images ON tags.imageid=images.imageid WHERE images.imagepath = ?";
+
+      PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
+      preparedStatement.setString(1,path);
+
+      ResultSet rs = preparedStatement.executeQuery();
+      int i = 0 ;
+      while (rs.next()) {
+        String name = rs.getString("tagname");
+        int x = rs.getInt("x");
+        int y = rs.getInt("y");
+        int width = rs.getInt("width");
+        int height = rs.getInt("height");
+
+  %>
+
+  addTagA(<%=x%>, <%=y%>,<%=width%>,<%=height%>,"<%=name%>");
+
+  <%
+      }
+    }catch(Exception e){
+      e.printStackTrace();
+    }
+  %>
+</script>
 </body>
 </html>
 

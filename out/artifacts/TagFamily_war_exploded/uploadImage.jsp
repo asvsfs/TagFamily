@@ -19,15 +19,17 @@
   <title> File Upload </title>
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
-  <script src="${pageContext.request.contextPath}/js/vendor/jquery-ui.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
   <script src="${pageContext.request.contextPath}/js/jquery.iframe-transport.js"></script>
-  <script src="${pageContext.request.contextPath}/js/jquery.fileupload.js"></script
+  <script src="${pageContext.request.contextPath}/js/jquery.fileupload.js"></script>
   <!-- bootstrap just to have good looking page -->
   <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
-  <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
 
-  <!-- we code these -->
+  <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
+  <link href="${pageContext.request.contextPath}/css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css"/>
   <link href="${pageContext.request.contextPath}/css/dropzone.css" type="text/css" rel="stylesheet" />
+
   <script src="${pageContext.request.contextPath}/js/uploadFunc.js"></script>
 
   <!-- header style ignore it -->
@@ -41,15 +43,18 @@
 <h1 style="text-align:center">File Upload<br></h1>
 
 <!-- user twitter -->
-<div id="user_twitter">
-  <span>Your Twitter</span>
-  <div class="input-prepend">
-    <span class="add-on">@</span>
-    <input class="span2" id="twitter" name="twitter" type="text" placeholder="Username">
-  </div>
-</div>
+
 <div style="width:700px;padding:20px">
 
+  <form method="post" action="/searchtag.jsp">
+    <fieldset>
+      <legend>Search for tags</legend>
+      <input type = "text" name="tagname" id="tagname" />
+      <input type="checkbox" name="tagimage" id="tagimage">Tagimage<br>
+      <input type="submit" name="searchbtn" id="searchbtn" value="Search" />
+    </fieldset>
+  </form>
+  <p></p>
   <input id="fileupload" type="file" name="files[]" data-url="upload" multiple>
 
   <div id="dropzone" class="fade well">Drop files here</div>

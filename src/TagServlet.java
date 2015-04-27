@@ -31,8 +31,6 @@ public class TagServlet extends HttpServlet {
         String filePath =
                 request.getServletContext().getInitParameter("file-upload");
 
-
-
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
                     "test", "test123");
@@ -48,7 +46,7 @@ public class TagServlet extends HttpServlet {
             String image = jobj.getString("image");
             String name = jobj.getString("name");
             int posx = jobj.getInt("posx");
-            int posy = jobj.getInt("posx");
+            int posy = jobj.getInt("posy");
             int poswidth = jobj.getInt("poswidth");
             int posheight = jobj.getInt("posheight");
 
@@ -65,14 +63,14 @@ public class TagServlet extends HttpServlet {
                 return;
 
 
-
-            String sqltag = "insert into tags(imageid,x,y,width,height) values(?,?,?,?,?)";
+            String sqltag = "insert into tags(imageid,x,y,width,height,tagname) values(?,?,?,?,?,?)";
             ps = connection.prepareStatement(sqltag, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, id);
             ps.setInt(2,posx);
-            ps.setInt(3,posy);;
+            ps.setInt(3,posy);
             ps.setInt(4,poswidth);
             ps.setInt(5,posheight);
+            ps.setString(6,name);
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
             int last_inserted_id =-1;
@@ -85,16 +83,14 @@ public class TagServlet extends HttpServlet {
                 response.sendRedirect("Internal error");
             }
 
-
             BufferedImage bigImg = ImageIO.read(new File(image));
             // The above line throws an checked IOException which must be caught.
-            final int width = poswidth;
-            final int height = posheight;
-            final int rows = 5;
-            final int cols = 5;
+            int rat = bigImg.getWidth() / 500;
+            final int width = poswidth * rat;
+            final int height = posheight * rat;
             BufferedImage tagimage = bigImg.getSubimage(
-                    posx,
-                    posy,
+                    posx * rat,
+                    posy * rat,
                     width,
                     height
             );
@@ -102,7 +98,7 @@ public class TagServlet extends HttpServlet {
             File newfile = new File(filePath+ UUID.randomUUID()+".jpg");
             ImageIO.write(tagimage, "jpg",newfile);
 
-            String sql = "insert into tagimage(tagid,tagimagepath) values(?,?)";
+            String sql = "insert into tagimage(tagid,imagepath) values(?,?)";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, last_inserted_id);
             ps.setString(2, newfile.getPath());

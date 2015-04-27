@@ -2,7 +2,9 @@
  * Created by asvsfs on 4/21/2015.
  */
 
-
+var searchTag=function(){
+    alert("HOY");
+};
 $(function () {
 
     //$.get( "/fetchuserimage", function( data ) {
@@ -14,7 +16,11 @@ $(function () {
     //        alert( "Data Loaded: " + data );
     //    });
 
-    $("#img1").tag();
+    $("#tagname").autocomplete({
+        source: "list.jsp",
+        appendTo:"#form_panel"
+    });
+
     $('#fileupload').fileupload({
 
         dataType: 'json',
@@ -30,7 +36,7 @@ $(function () {
                         .append($('<td/>').text(file.fileSize))
                         .append($('<td/>').text(file.fileType))
                         //.append($('<td/>').html("<a href='upload?f="+index+"'>Click</a>"))
-                        .append($('<td/>').html("<img class='imgholder' src='fetchimage?f="+file.fileAddress+"' ahref='/imagetag?f="+file.fileAddress+"' >Click</a>"))
+                        .append($('<td/>').html("<a href='/imagetag?f="+file.fileAddress+"><img class='imgholder' src='fetchimage?f="+file.fileAddress+"' >Click</a>"))
                         .append($('<td/>').text("@"+file.twitter))
 
                 )//end $("#uploaded-files").append()

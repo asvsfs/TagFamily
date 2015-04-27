@@ -8,7 +8,7 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-
+    //---------------
     <servlet>
         <servlet-name>login</servlet-name>
         <servlet-class>LoginServlet</servlet-class>
@@ -18,7 +18,7 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
-
+//---------------
     <servlet>
         <servlet-name>upload</servlet-name>
         <servlet-class>FileUploadServlet</servlet-class>
@@ -33,7 +33,7 @@
         <servlet-name>upload</servlet-name>
         <url-pattern>/fetchimage</url-pattern>
     </servlet-mapping>
-
+    //---------------
     <servlet>
         <servlet-name>tagimage</servlet-name>
         <servlet-class>TagServlet</servlet-class>
@@ -44,7 +44,7 @@
         <url-pattern>/tagimage</url-pattern>
     </servlet-mapping>
 
-
+    //---------------
     <servlet>
         <servlet-name>DatabaseAccess</servlet-name>
         <servlet-class>DatabaseAccess</servlet-class>
@@ -54,7 +54,7 @@
         <servlet-name>DatabaseAccess</servlet-name>
         <url-pattern>/DatabaseAccess</url-pattern>
     </servlet-mapping>
-
+    //---------------
     <servlet>
         <servlet-name>registerServlet</servlet-name>
         <servlet-class>RegisterServlet</servlet-class>
@@ -64,7 +64,19 @@
         <servlet-name>registerServlet</servlet-name>
         <url-pattern>/registerUser</url-pattern>
     </servlet-mapping>
+    //---------------
 
+    <servlet>
+        <servlet-name>deletetagServlet</servlet-name>
+        <servlet-class>DeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deletetagServlet</servlet-name>
+        <url-pattern>/deletetag</url-pattern>
+    </servlet-mapping>
+
+    //---------------
     <context-param>
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>

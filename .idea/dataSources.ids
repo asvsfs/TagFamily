@@ -18,11 +18,12 @@
       <index name="userid_idx" unique="false" columns="userid"/>
     </table>
     <table name="tagimage" schema="" catalog="test" type="TABLE">
-      <column name="tagimageid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="tagimagepath" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="tagimageid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="imagepath" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
       <column name="tagid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="tagimageid"/>
-      <foreign-key name="tagid" columns="tagid" ref-table="tags" ref-schema="" ref-catalog="test" ref-columns="tagid" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tagid" columns="tagid" ref-table="tags" ref-schema="" ref-catalog="test" ref-columns="tagid" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="tagid_UNIQUE" unique="true" columns="tagid"/>
       <index name="tagimageid_UNIQUE" unique="true" columns="tagimageid"/>
       <index name="tagid_idx" unique="false" columns="tagid"/>
     </table>
@@ -34,6 +35,7 @@
       <column name="width" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="height" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="tagimageid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="tagname" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="tagid"/>
       <foreign-key name="imageid" columns="imageid" ref-table="images" ref-schema="" ref-catalog="test" ref-columns="imageid" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="tagid" table="tagimage" schema="" catalog="test" columns="tagid"/>
