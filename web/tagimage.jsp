@@ -161,7 +161,7 @@
         var img_scope_top = $("#imageMap").offset().top + $("#imageMap").height() - $(this).find(".tagged_box").height();
         var img_scope_left = $("#imageMap").offset().left + $("#imageMap").width() - $(this).find(".tagged_box").width();
 
-        $(this).draggable({ containment:[$("#imageMap").offset().left,$("#imageMap").offset().top,img_scope_left,img_scope_top]  });
+        //$(this).draggable({ containment:[$("#imageMap").offset().left,$("#imageMap").offset().top,img_scope_left,img_scope_top]  });
 
       });
 
@@ -317,6 +317,8 @@
       $(obj).parent().css("display","none");
       $(obj).parent().parent().find(".tagged_title").css("display","none");
       $(obj).parent().html('');
+
+
 
     }
 

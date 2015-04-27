@@ -63,14 +63,16 @@ public class TagServlet extends HttpServlet {
                 return;
 
 
-            String sqltag = "insert into tags(imageid,x,y,width,height,tagname) values(?,?,?,?,?,?)";
+            String tagimagePath = filePath+ UUID.randomUUID()+".jpg";
+            String sqltag = "insert into tags(imageid,x,y,width,height,tagname,imagepatht) values(?,?,?,?,?,?,?)";
             ps = connection.prepareStatement(sqltag, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, id);
             ps.setInt(2,posx);
             ps.setInt(3,posy);
             ps.setInt(4,poswidth);
             ps.setInt(5,posheight);
-            ps.setString(6,name);
+            ps.setString(6, name);
+            ps.setString(7,tagimagePath);
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
             int last_inserted_id =-1;
@@ -85,24 +87,24 @@ public class TagServlet extends HttpServlet {
 
             BufferedImage bigImg = ImageIO.read(new File(image));
             // The above line throws an checked IOException which must be caught.
-            int rat = bigImg.getWidth() / 500;
-            final int width = poswidth * rat;
-            final int height = posheight * rat;
+            float rat = bigImg.getWidth() / 600.0f;
+            final int width = (int) (poswidth * rat);
+            final int height = (int) (posheight * rat);
             BufferedImage tagimage = bigImg.getSubimage(
-                    posx * rat,
-                    posy * rat,
+                    (int)(posx * rat),
+                    (int)(posy * rat),
                     width,
                     height
             );
 
-            File newfile = new File(filePath+ UUID.randomUUID()+".jpg");
+            File newfile = new File(tagimagePath);
             ImageIO.write(tagimage, "jpg",newfile);
 
-            String sql = "insert into tagimage(tagid,imagepath) values(?,?)";
-            ps = connection.prepareStatement(sql);
-            ps.setInt(1, last_inserted_id);
-            ps.setString(2, newfile.getPath());
-            ps.execute();
+//            String sql = "insert into tagimage(tagid,imagepath) values(?,?)";
+//            ps = connection.prepareStatement(sql);
+//            ps.setInt(1, last_inserted_id);
+//            ps.setString(2, newfile.getPath());
+//            ps.execute();
 
 
         }catch(Exception e){

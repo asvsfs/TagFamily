@@ -46,8 +46,10 @@
       PreparedStatement preparedStatement;
       String selectSQL = "select * from tags INNER JOIN images ON tags.imageid=images.imageid where tagname = ?";
       String test = request.getParameter("tagimage");
-      if(test.compareTo("on")==0){
-        selectSQL = "select * from tags INNER JOIN tagimage ON tags.tagid=tagimage.tagid where tagname = ?";
+      boolean istag = false;
+      if(test!=null && test.compareTo("on")==0){
+        istag = true;
+        selectSQL = "select * from tags where tagname = ?";
         preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setString(1, request.getParameter("tagname"));
       }else{
@@ -57,8 +59,12 @@
 
       ResultSet rs = preparedStatement.executeQuery();
       int i = 0 ;
+      String colName = "imagepath";
+      if(istag){
+        colName = "imagepatht";
+      }
       while (rs.next()) {
-        File file = new File(rs.getString("imagepath"));
+        File file = new File(rs.getString(colName));
         int id = rs.getInt("imageid");
   %>
   <tr id="tt<%=i++%>" >
