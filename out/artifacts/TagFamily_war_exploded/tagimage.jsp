@@ -230,8 +230,6 @@
       });
     });
 
-
-
     var addTagA = function(x,y,width,height,name){
       var pos_x = x;
       var pos_y = y;

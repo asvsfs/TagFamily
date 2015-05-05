@@ -30,15 +30,14 @@ $(function () {
            //location.reload();
 
             $.each(data.result, function (index, file) {
+                var f = file.fileAddress;
                 $("#uploaded-files").append(
                     $('<tr/>')
                         .append($('<td/>').text(file.fileName))
                         .append($('<td/>').text(file.fileSize))
                         .append($('<td/>').text(file.fileType))
-                        //.append($('<td/>').html("<a href='upload?f="+index+"'>Click</a>"))
-                        .append($('<td/>').html("<a href='/imagetag?f="+file.fileAddress+"><img class='imgholder' src='fetchimage?f="+file.fileAddress+"' >Click</a>"))
-                        .append($('<td/>').text("@"+file.twitter))
-
+                        .append($('<td/>').html("<a href='/tagimage.jsp?f="+f+"'><img class='imgholder' src='/fetchimage?f="+f+"'></a>"))
+                        //.append($('<td/>').html('<a href="/tagimage.jsp?f="+f+""><img class="imgholder" src="/fetchimage?f="+f+"" /></a>'))
                 )//end $("#uploaded-files").append()
             });
         },

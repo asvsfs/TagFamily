@@ -9,6 +9,7 @@
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@ page import="org.jose4j.json.internal.json_simple.JSONObject" %>
+<%@ page import="org.json.JSONArray" %>
 
 <%
   try{
@@ -42,21 +43,20 @@
     String query = (String)request.getParameter("term");
 
     int cnt=1;
+    JSONArray json = new JSONArray();
     for(int j=0;j<str.length;j++)
     {
       if(str[j].toUpperCase().startsWith(query.toUpperCase()))
       {
-        JSONObject json = new JSONObject();
-
-        json.put("label", str[j]);
-        String jString = JSONObject.toJSONString(json);
-        out.println(jString);
+        json.put(str[j]);
         //out.print(str[j]+"\n");
         if(cnt>=5)// 5=How many results have to show while we are typing(auto suggestions)
           break;
         cnt++;
       }
     }
+    String jString = json.toString();
+    out.println(jString);
     //jQuery related end
 
     rs.close();
