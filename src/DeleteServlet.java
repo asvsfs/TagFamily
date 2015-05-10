@@ -54,25 +54,25 @@ public class DeleteServlet extends HttpServlet {
             String selectSQL ="SELECT * FROM tagimage INNER JOIN tags ON tagimage.tagid=tags.tagid INNER JOIN images ON tags.imageid = images.imageid ";
             String deleteTagimage = "DELETE tagimage FROM tagimage WHERE tagimage.tagid=?";
             String deleteTag = "DELETE tags FROM tags WHERE tags.tagid = ?";
-            ps = connection.prepareStatement(selectSQL);
+//            ps = connection.prepareStatement(selectSQL);
+//
+//            rs = ps.executeQuery();
+                id = jobj.getInt("id");
+//            while(rs.next()){
+//                File file = new File(rs.getString("imagepath"));
+//
+//                if(file.delete()){
+//                    System.out.println(file.getName() + " is deleted!");
+//                }else{
+//                    System.out.println("Delete operation is failed.");
+//                }
+//                id = rs.getInt("tagid");
+//
+//            }
 
-            rs = ps.executeQuery();
-            id = -1 ;
-            while(rs.next()){
-                File file = new File(rs.getString("imagepath"));
-
-                if(file.delete()){
-                    System.out.println(file.getName() + " is deleted!");
-                }else{
-                    System.out.println("Delete operation is failed.");
-                }
-                id = rs.getInt("tagid");
-
-            }
-
-            ps = connection.prepareStatement(deleteTagimage);
-            ps.setInt(1,id);
-            ps.execute();
+//            ps = connection.prepareStatement(deleteTagimage);
+//            ps.setInt(1,id);
+//            ps.execute();
             ps = connection.prepareStatement(deleteTag);
             ps.setInt(1,id);
             ps.execute();

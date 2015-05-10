@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/web/tagimage.jsp" line="243" mnemonic="4" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f30cd977-acf7-4989-a6de-f9f861cb2892" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/list.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/list.jsp" afterPath="$PROJECT_DIR$/web/list.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/gson-2.3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/gson-2.3.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DeleteServlet.java" afterPath="$PROJECT_DIR$/src/DeleteServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TagServlet.java" afterPath="$PROJECT_DIR$/src/TagServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TagFamily_ear_exploded/web.war/tagimage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TagFamily_ear_exploded/web.war/tagimage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/tagimage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/tagimage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tagimage.jsp" afterPath="$PROJECT_DIR$/web/tagimage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/js/uploadFunc.js" afterPath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/js/uploadFunc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/uploadFunc.js" afterPath="$PROJECT_DIR$/web/js/uploadFunc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/uploadImage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TagFamily_war_exploded/uploadImage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/uploadImage.jsp" afterPath="$PROJECT_DIR$/web/uploadImage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TagFamily.iws" />
@@ -109,119 +115,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="uploadImage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/uploadImage.jsp">
+      <file leaf-file-name="TagServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TagServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="12" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
-                <marker date="1430043864214" expanded="true" signature="2875:2912" placeholder="select * fro..images..." />
+                <element signature="e#3307#3324#0" expanded="true" />
+                <element signature="method#doGet#0;class#TagServlet#0" expanded="true" />
+                <marker date="1431267055483" expanded="true" signature="1992:2038" placeholder="select image..images..." />
+                <marker date="1431267055483" expanded="true" signature="2458:2541" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchtag.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/searchtag.jsp">
+      <file leaf-file-name="DeleteServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DeleteServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
+              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
-                <marker date="1430121054950" expanded="true" signature="1889:1974" placeholder="select * fro..tags..." />
-                <marker date="1430121054950" expanded="true" signature="2152:2171" placeholder="select * fro..tags..." />
-                <marker date="1430121054950" expanded="true" signature="2152:2188" placeholder="select * fro..tags..." />
+                <marker date="1431267186700" expanded="true" signature="1443:1489" placeholder="select image..images..." />
+                <marker date="1431267186700" expanded="true" signature="1841:1959" placeholder="SELECT * FRO..tagimage..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tagimage.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tagimage.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/tagimage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="226" column="15" selection-start-line="226" selection-start-column="10" selection-end-line="226" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.8015717">
+              <caret line="344" column="7" selection-start-line="344" selection-start-column="7" selection-end-line="344" selection-end-column="7" />
               <folding>
-                <marker date="1430761391279" expanded="true" signature="6724:6728" placeholder="..." />
-                <marker date="1430761391279" expanded="true" signature="7312:7316" placeholder="..." />
-                <marker date="1430761391279" expanded="true" signature="10811:10905" placeholder="select * fro..tags..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
-              <folding>
-                <marker date="1430762615174" expanded="true" signature="657:683" placeholder="select usern..users..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/LoginServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4940476">
-              <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="56" selection-end-column="49" />
-              <folding>
-                <marker date="1429948286274" expanded="true" signature="1409:1460" placeholder="select * fro..users..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RegisterServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-              <folding>
-                <marker date="1429645163986" expanded="true" signature="1376:1452" placeholder="INSERT INTO ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uploadFunc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/uploadFunc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="19" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileUploadServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FileUploadServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-              <folding>
-                <marker date="1429738386291" expanded="true" signature="2651:2700" placeholder="insert into ..." />
+                <element signature="e#3058#6293#0#HTML" expanded="true" />
+                <element signature="e#3719#4310#0#HTML" expanded="true" />
+                <element signature="e#7406#7471#0#HTML" expanded="true" />
+                <element signature="e#8981#9396#0#HTML" expanded="true" />
+                <element signature="e#9257#9297#0#HTML" expanded="true" />
+                <marker date="1431268335285" expanded="true" signature="6748:6752" placeholder="..." />
+                <marker date="1431268335285" expanded="true" signature="7818:7822" placeholder="..." />
+                <marker date="1431268335285" expanded="true" signature="10950:11044" placeholder="select * fro..tags..." />
               </folding>
             </state>
           </provider>
@@ -293,13 +228,13 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/console.sql" />
         <option value="$PROJECT_DIR$/web/css/dropzone.css" />
-        <option value="$PROJECT_DIR$/src/DeleteServlet.java" />
-        <option value="$PROJECT_DIR$/web/uploadImage.jsp" />
         <option value="$PROJECT_DIR$/web/searchtag.jsp" />
-        <option value="$PROJECT_DIR$/src/TagServlet.java" />
-        <option value="$PROJECT_DIR$/web/tagimage.jsp" />
         <option value="$PROJECT_DIR$/web/list.jsp" />
         <option value="$PROJECT_DIR$/web/js/uploadFunc.js" />
+        <option value="$PROJECT_DIR$/web/uploadImage.jsp" />
+        <option value="$PROJECT_DIR$/src/TagServlet.java" />
+        <option value="$PROJECT_DIR$/src/DeleteServlet.java" />
+        <option value="$PROJECT_DIR$/web/tagimage.jsp" />
       </list>
     </option>
   </component>
@@ -350,8 +285,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,9 +367,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TagFamily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TagFamily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TagFamily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TagFamily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gson-2.3.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,11 +429,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Project\TagFamily\web\WEB-INF\lib" />
+      <recent name="E:\Project\TagFamily\lib" />
       <recent name="E:\Project\TagFamily\web" />
       <recent name="E:\Project\TagFamily\web\WEB-INF" />
       <recent name="E:\Project\TagFamily\web\css" />
-      <recent name="E:\Project\TagFamily\web\js" />
-      <recent name="E:\Project\TagFamily\web\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Project\TagFamily\web" />
@@ -737,6 +704,9 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="Unknown" factoryName="Unknown">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -932,11 +902,17 @@
       <workItem from="1430676516870" duration="2010000" />
       <workItem from="1430760471391" duration="3651000" />
       <workItem from="1430774966571" duration="1032000" />
+      <workItem from="1430809833648" duration="30000" />
+      <workItem from="1430916914435" duration="663000" />
+      <workItem from="1431011121302" duration="6000" />
+      <workItem from="1431178982055" duration="1249000" />
+      <workItem from="1431262426406" duration="452000" />
+      <workItem from="1431265629154" duration="2758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91250000" />
+    <option name="totallyTimeSpent" value="96408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -949,37 +925,37 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32258064" sideWeight="0.51618123" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52073735" sideWeight="0.4935275" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21440129" sideWeight="0.54362416" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34789643" sideWeight="0.45637584" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2038835" sideWeight="0.45637584" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18851133" sideWeight="0.5296167" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12459547" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22815534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23220065" sideWeight="0.5069686" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2891705" sideWeight="0.48381877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23220065" sideWeight="0.5069686" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30184332" sideWeight="0.48381877" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2857143" sideWeight="0.4935275" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27272728" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19930875" sideWeight="0.4935065" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
@@ -1003,7 +979,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="220" />
+      <option name="time" value="238" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1012,18 +988,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..tags">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/jose4j-0.4.1-sources.jar!/org/jose4j/jwa/AlgorithmFactoryFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23287672">
@@ -1169,18 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..users">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MultipartRequestHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3322314">
@@ -1216,13 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/success.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6761364">
@@ -1234,13 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="90" selection-start-line="0" selection-start-column="90" selection-end-line="0" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeleteServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1258,81 +1196,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..images">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..tagimage">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="tagimageid" languageId="MySQL" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..tags">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TagServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/searchtag.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
-          <folding>
-            <marker date="1430121054950" expanded="true" signature="1889:1974" placeholder="select * fro..tags..." />
-            <marker date="1430121054950" expanded="true" signature="2152:2171" placeholder="select * fro..tags..." />
-            <marker date="1430121054950" expanded="true" signature="2152:2188" placeholder="select * fro..tags..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploadImage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="12" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
-          <folding>
-            <marker date="1430043864214" expanded="true" signature="2875:2912" placeholder="select * fro..images..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileUploadServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding>
-            <marker date="1429738386291" expanded="true" signature="2651:2700" placeholder="insert into ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1351,38 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <marker date="1429645163986" expanded="true" signature="1376:1452" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/tagimage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="226" column="15" selection-start-line="226" selection-start-column="10" selection-end-line="226" selection-end-column="15" />
-          <folding>
-            <marker date="1430761391279" expanded="true" signature="6724:6728" placeholder="..." />
-            <marker date="1430761391279" expanded="true" signature="7312:7316" placeholder="..." />
-            <marker date="1430761391279" expanded="true" signature="10811:10905" placeholder="select * fro..tags..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
-          <folding>
-            <marker date="1430762615174" expanded="true" signature="657:683" placeholder="select usern..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34719712">
@@ -1397,14 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/uploadFunc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1413,12 +1240,191 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BCrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="648" column="31" selection-start-line="648" selection-start-column="25" selection-end-line="648" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#27990#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="method#encode_base64#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#char64#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#decode_base64#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#encipher#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#streamtoword#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#init_key#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#key#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#ekskey#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#crypt_raw#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#hashpw#0;class#BCrypt#0" expanded="false" />
+            <element signature="method#gensalt#0;class#BCrypt#0" expanded="false" />
+            <element signature="e#26914#26915#0" expanded="false" />
+            <element signature="e#26967#26968#0" expanded="false" />
+            <element signature="e#27188#27189#0" expanded="false" />
+            <element signature="e#27238#27239#0" expanded="false" />
+            <element signature="method#checkpw#0;class#BCrypt#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/success.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2088453">
+          <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploadImage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="6" selection-start-line="84" selection-start-column="6" selection-end-line="84" selection-end-column="6" />
+          <folding>
+            <marker date="1431180906913" expanded="true" signature="-1:-1" placeholder="select * fro..images..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/uploadFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="e#739#1397#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileUploadServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding>
+            <marker date="1429738386291" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="84" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="84" />
+          <folding>
+            <marker date="1429645163986" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..tagimage">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="tagimageid" languageId="MySQL" />
+          </column-attributes>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4940476">
-          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="56" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <marker date="1429948286274" expanded="true" signature="1409:1460" placeholder="select * fro..users..." />
+            <element signature="method#doPost#0;class#LoginServlet#0" expanded="true" />
+            <element signature="method#doGet#0;class#LoginServlet#0" expanded="true" />
+            <marker date="1429948286274" expanded="true" signature="-1:-1" placeholder="select * fro..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TagServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#3307#3324#0" expanded="true" />
+            <element signature="method#doGet#0;class#TagServlet#0" expanded="true" />
+            <marker date="1431267055483" expanded="true" signature="1992:2038" placeholder="select image..images..." />
+            <marker date="1431267055483" expanded="true" signature="2458:2541" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DeleteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <marker date="1431267186700" expanded="true" signature="1443:1489" placeholder="select image..images..." />
+            <marker date="1431267186700" expanded="true" signature="1841:1959" placeholder="SELECT * FRO..tagimage..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ed78a2d4/e9d5b206-a620-4d61-b1fe-0fad68fedbc5/test..tags">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/tagimage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8015717">
+          <caret line="344" column="7" selection-start-line="344" selection-start-column="7" selection-end-line="344" selection-end-column="7" />
+          <folding>
+            <element signature="e#3058#6293#0#HTML" expanded="true" />
+            <element signature="e#3719#4310#0#HTML" expanded="true" />
+            <element signature="e#7406#7471#0#HTML" expanded="true" />
+            <element signature="e#8981#9396#0#HTML" expanded="true" />
+            <element signature="e#9257#9297#0#HTML" expanded="true" />
+            <marker date="1431268335285" expanded="true" signature="6748:6752" placeholder="..." />
+            <marker date="1431268335285" expanded="true" signature="7818:7822" placeholder="..." />
+            <marker date="1431268335285" expanded="true" signature="10950:11044" placeholder="select * fro..tags..." />
           </folding>
         </state>
       </provider>

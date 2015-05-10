@@ -155,6 +155,7 @@
       });
 
       $("#planetmap").on("click",".tagged",function(){
+
         $(this).find(".tagged_box").html("<img src='del.png' class='openDialog' value='Delete' onclick='deleteTag(this)' />\n\
         <img src='save.png' onclick='editTag(this);' value='Save' />");
 
@@ -230,13 +231,13 @@
       });
     });
 
-    var addTagA = function(x,y,width,height,name){
+    var addTagA = function(x,y,width,height,name,id){
       var pos_x = x;
       var pos_y = y;
       var pos_width = width;
       var pos_height = height;
 
-      $('#planetmap').append('<div class="tagged" style="width:'+pos_width+';height:'+
+      $('#planetmap').append('<div class="tagged" data-tagid="'+id+'" style="width:'+pos_width+';height:'+
       pos_height+';left:'+pos_x+';top:'+pos_y+';" ><div   class="tagged_box" style="width:'+pos_width+';height:'+
       pos_height+';display:none;"></div><div class="tagged_title" style="top:'+(pos_height+5)+';display:none;" >'+
       name+'</div></div>');
@@ -254,15 +255,7 @@
       var pos_height = $('#mapper').height();
 
 
-      $('#planetmap').append('<div class="tagged"  style="width:'+pos_width+';height:'+
-      pos_height+';left:'+pos_x+';top:'+pos_y+';" ><div   class="tagged_box" style="width:'+pos_width+';height:'+
-      pos_height+';display:none;"></div><div class="tagged_title" style="top:'+(pos_height+5)+';display:none;" >'+
-      $("#title").val()+'</div></div>');
-
-
-      $("#mapper").hide();
-      $("#form_panel").hide();
-
+      var id = -1;
       $.ajax({
         type: "POST",
         url: "/tagimage",
@@ -275,9 +268,19 @@
           name:$("#title").val()}),
         success: function(data){
           console.log(data);
+
+          id = data.id;
         },
         contentType: "application/json"
       });
+
+      $('#planetmap').append('<div class="tagged" data-tagid="'+id+'" style="width:'+pos_width+';height:'+
+      pos_height+';left:'+pos_x+';top:'+pos_y+';" ><div   class="tagged_box" style="width:'+pos_width+';height:'+
+      pos_height+';display:none;"></div><div class="tagged_title" style="top:'+(pos_height+5)+';display:none;" >'+
+      $("#title").val()+'</div></div>');
+
+      $("#mapper").hide();
+      $("#form_panel").hide();
 
 
       $("#title").val('');
@@ -322,13 +325,13 @@
 
     var deleteTag = function(obj){
 
-
       $.ajax({
         type: "POST",
         url: "/deletetag",
         data: JSON.stringify({
           image:$("#imageMap").attr("src"),
-          name:$(obj).parent().parent().val()}),
+          name:$(obj).parent().parent().val(),
+          id: $(obj).parent().parent().data('tagid')}),
         success: function(data){
           console.log(data);
         },
@@ -407,10 +410,11 @@
         int y = rs.getInt("y");
         int width = rs.getInt("width");
         int height = rs.getInt("height");
+        int id = rs.getInt("tagid");
 
   %>
 
-  addTagA(<%=x%>, <%=y%>,<%=width%>,<%=height%>,"<%=name%>");
+  addTagA(<%=x%>, <%=y%>,<%=width%>,<%=height%>,"<%=name%>" ,<%=id%>);
 
   <%
       }

@@ -1,4 +1,6 @@
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -79,11 +83,20 @@ public class TagServlet extends HttpServlet {
             if(rs.next())
             {
                 last_inserted_id = rs.getInt(1);
+
             }
             if(last_inserted_id < 0){
                 response.setStatus(500);
                 response.sendRedirect("Internal error");
             }
+            Map<String, Integer> idmap =
+                    new HashMap<String, Integer>();
+            idmap.put("id",last_inserted_id);
+            Gson gson = new GsonBuilder().setPrettyPrinting()
+                    .create();
+            String jsonOut = gson.toJson(idmap);
+            response.getWriter().write(jsonOut);
+
 
             BufferedImage bigImg = ImageIO.read(new File(image));
             // The above line throws an checked IOException which must be caught.

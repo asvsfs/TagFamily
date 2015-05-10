@@ -82,7 +82,7 @@
       Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
               "test", "test123");
 
-        String selectSQL = "select * from images where userid = ?";
+      String selectSQL = "select * from images where userid = ?";
 
       PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
       preparedStatement.setInt(1, Integer.parseInt(session.getAttribute("userid").toString()));

@@ -230,13 +230,13 @@
       });
     });
 
-
-
-    var addTagA = function(x,y,width,height,name){
+    var addTagA = function(x,y,width,height,name,id){
       var pos_x = x;
       var pos_y = y;
       var pos_width = width;
       var pos_height = height;
+
+      $("#mapper").data('tagid',id);
 
       $('#planetmap').append('<div class="tagged" style="width:'+pos_width+';height:'+
       pos_height+';left:'+pos_x+';top:'+pos_y+';" ><div   class="tagged_box" style="width:'+pos_width+';height:'+
@@ -277,6 +277,8 @@
           name:$("#title").val()}),
         success: function(data){
           console.log(data);
+
+          $("#mapper").data('tagid',data.id);
         },
         contentType: "application/json"
       });
@@ -331,6 +333,7 @@
         data: JSON.stringify({
           image:$("#imageMap").attr("src"),
           name:$(obj).parent().parent().val()}),
+          id: $("#mapper").data('tagid'),
         success: function(data){
           console.log(data);
         },
@@ -409,10 +412,11 @@
         int y = rs.getInt("y");
         int width = rs.getInt("width");
         int height = rs.getInt("height");
+        int id = rs.getInt("tagid");
 
   %>
 
-  addTagA(<%=x%>, <%=y%>,<%=width%>,<%=height%>,"<%=name%>");
+  addTagA(<%=x%>, <%=y%>,<%=width%>,<%=height%>,"<%=name%>" ,<%=id%>);
 
   <%
       }
